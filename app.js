@@ -4,9 +4,15 @@
 
 const express = require('express');
 const { get } = require('lodash');
+const morgan = require('morgan');
+
 
 // express app
 const app = express();
+
+// connect to mongodb
+const dbURI = 'mongodb+srv://nodetutorial:Node2145@nodetuts.f6nwo.mongodb.net/<dbname>?retryWrites=true&w=majority'
+
 
 // register view engine
 app.set('view engine', 'ejs');
@@ -16,6 +22,10 @@ app.set('view engine', 'ejs');
 
 // listen for request
 app.listen(3000);
+
+// middleware & static files
+app.use(express.static('public'));
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
     // res.send('<p>./htmlfiles/index.html</p>');
