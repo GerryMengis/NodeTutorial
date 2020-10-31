@@ -16,9 +16,10 @@ const dbURI = 'mongodb+srv://nodetutorial:Node2145@nodetuts.f6nwo.mongodb.net/<d
 
 // register view engine
 app.set('view engine', 'ejs');
-
-// if you have a different flder, this is how to reach
 // app.set('view', 'myview');
+
+// if you have a different folder, this is how to reach
+
 
 // listen for request
 app.listen(3000);
